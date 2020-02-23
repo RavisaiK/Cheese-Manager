@@ -1,19 +1,18 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12 m-3">
             <ul *ngFor="let data of data$ | async">
                 <li>{{data.user_acc_id}}</li>
             </ul>
-            <span *ngIf="share == 2">
+            <span *ngIf="share == 2" class="m-2">
                 <google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames"
-                    [options]="options" [width]="width" [height]="height">
+                    [options]="options" [width]="width" [height]="height" class="mx-auto shadow">
                 </google-chart>
             </span>
-            <div class="d-flex align-items-center justify-content-end">
+            <div class="d-flex align-items-center justify-content-center mt-3">
                 <button class="btn btn-outline-secondary mr-3" (click)="login()">Back</button>
-                <button class="btn btn-primary" (click)="fetchData()">Generate Charts</button>
+                <button class="btn btn-primary" (click)="fetchData()">Generate Insight</button>
             </div>
         </div>
-        <div class="col-md-6"></div>
     </div>
 </div>

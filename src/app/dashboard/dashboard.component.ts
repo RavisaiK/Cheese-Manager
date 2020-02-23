@@ -10,30 +10,27 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   public share = 1;
-
-  title = 'Opex prediction for the month of march';
-   type = 'ComboChart';
+  
+  title = 'Overall deficit in OPEX (in millions)';
+   type = 'BarChart';
    data = [
-      ["Salaries", 3, 2, 2.5],
-      ["Reimbursements",2, 3, 2.5],
-      ["Food", 1, 5, 3],
-      ["Mainteanance", 3, 9, 6],
-      ["Bills", 4, 2, 3],
-      ["Cabs", 4, 1, 2],
+      ["2012", 900, 390],
+      ["2013", 1000, 400],
+      ["2014", 1170, 440],
+      ["2015", 1250, 480],
+      ["2016", 1530, 540]
    ];
-   columnNames = ['Salaries', 'Reimbursements','Food','Mainteanance', 'Bills', 'Cabs'];
+   columnNames = ['Year', 'Asia','Europe'];
    options = {   
       hAxis: {
-         title: 'Person'
+         title: 'Year'
       },
       vAxis:{
-         title: 'Opex Prediction over the past two months'
-      },
-      seriesType: 'bars',
-      series: {2: {type: 'line'}}
+         minValue:0
+      }  
    };
    width = 550;
-   height = 400;
+   height = 400
 
   data$;
   constructor( private dataService: DataService, private router: Router) { }
