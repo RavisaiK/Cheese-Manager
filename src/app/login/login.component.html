@@ -1,33 +1,41 @@
 <div class="container-fluid">
-    <div class="row d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-        <div class="col-md-6">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="form-group">
-                      <label for="name" class="label-position">User Name</label>
-                      <input type="name" class="form-control" id="name" formControlName="name">
-                    </div>
-                    <div class="form-group">
-                      <label for="password" class="label-position">Password</label>
-                      <input type="password" class="form-control" id="password" formControlName="password">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                      <button type="button" class="btn btn-primary w-100">Submit</button>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                      <button class="btn btn-sm btn-outline-secondary mt-3">Signup here</button>
-                    </div>
-                </div>
-              </div>
+  <div class="row d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="col-md-6">
+      <div class="card border-0 shadow">
+        <div class="card-body">
+          <div class="card-body text-center">
+            <img src="assets/insight.svg" class="img-fluid">
+          </div>
+          <div class="card-body">
+            <google-chart #chart [title]="title" [type]="type" [data]="data" [options]="options" [width]="width"
+              [height]="height" class="mx-auto shadow">
+            </google-chart>
+          </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-body text-center">
-                        <img src="">
-                      </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div  class="card border-0 shadow">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name" class="label-position">User Name</label>
+            <input type="name" class="form-control" id="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="password" class="label-position">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary w-100" (click)="dashboard()">Submit</button>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-sm btn-outline-secondary mt-3">Signup here</button>
+          </div>
         </div>
+        <div class="card-header text-center">
+          <b>Why just do payments, when you can get much more every time you pay...</b>
+        </div>
+      </div>
     </div>
   </div>
+</div>
